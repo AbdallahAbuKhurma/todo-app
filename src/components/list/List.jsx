@@ -28,14 +28,6 @@ function List(props) {
   }, [list]);
 
   const listOfTodos = filter.slice(startingIndex, itemPerPages).map((item) =>{
-    const difficulty = item.difficulty;
-    if(item.difficulty > 3){
-      item.difficulty = 'Hard';
-    } else if(item.difficulty < 3) {
-      item.difficulty = 'Easy';
-    } else {
-      item.difficulty = 'Medium';
-    }
     return(
       <div className = 'list' key={uuid()}>
         <p style = {{fontWeight: 'bold'}}>{item.text}</p>
@@ -43,7 +35,7 @@ function List(props) {
           <small>Assigned to: {item.assignee}</small>
         </p>
         <p>
-          <small>Difficulty: {difficulty}</small>
+          <small>Difficulty: {`${item.difficulty} out of 5`}</small>
         </p>
         <p>
           <small onClick={() => toggleComplete(item.id)}>
