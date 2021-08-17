@@ -1,13 +1,19 @@
 import React from 'react';
-// import Header from './components/header/Header';
-import ToDo from './components/todo/list';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import ToDo from './components/todo/ToDo';
+import ListContext from './context/settings/context';
+
 
 function App() {
   return (
-    <div>
-      {/* <Header/> */}
-      <ToDo/>
-    </div>
+    <>
+      <Header/>
+      <ListContext>
+        <ToDo/>
+      </ListContext>
+      <Footer/>
+    </>
   );
 }
 

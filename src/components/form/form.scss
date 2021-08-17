@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  margin-left: 1.25rem;
+  padding-right: 1rem;
+  margin-bottom: .5rem;
+}
+input{
+  font-family: 'Open Sans', sans-serif;
+  height: 2.3rem;
+  width: 90%;
+  margin-left: 1.25rem;
+  margin-bottom: .5rem;
+  cursor: pointer;
+}
+
+.usual-button {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  height: 2.5rem;
+  width: 6rem;
+  margin-left: 1.25rem;
+  background-color:#04c;;
+  border-radius: 3rem;
+  cursor: pointer;
+  &:hover{
+    background-color:#0d47a1;
+  }
+}

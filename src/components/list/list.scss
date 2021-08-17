@@ -1,0 +1,27 @@
+
+header{
+  h1{
+    text-align: left;
+    margin-bottom: 1.25rem;
+    margin-left: 1.25rem;
+  }
+}
+
+.list{
+  border-left: chocolate solid .5rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+
+.incomplete{
+  float: right;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  height: 2.7rem;
+  width: 9.5rem;
+  margin-right: 1.25rem;
+  background-color:#c0392b;;
+  border-radius: 3rem;
+  cursor: pointer;
+}
