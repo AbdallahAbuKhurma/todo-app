@@ -8,6 +8,8 @@ A Web Application for securely managing a To Do List
 
 [Context-Settings](https://github.com/AbdallahAbuKhurma/todo-app/pull/2)
 
+[Context-Methods](https://github.com/AbdallahAbuKhurma/todo-app/pull/6)
+
 ## Deployment
 
 [URL](https://todomanager00.netlify.app/)
