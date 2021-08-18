@@ -4,6 +4,7 @@ import useForm from '../../hooks/form';
 import Form from './Form';
 import Header from './Header';
 import List from './List';
+import SettingsForm from './SettingsForm';
 import '../styles.scss';
 
 const ToDo = () => {
@@ -48,6 +49,7 @@ const ToDo = () => {
   return (
     <>
       <Header incomplete = {incomplete}/>
+      <SettingsForm/>
       <Form className = 'split' handleChange = {handleChange} handleSubmit = {handleSubmit} />
       <List className = 'split' toggleComplete = {toggleComplete} list = {list}/>
     </>
