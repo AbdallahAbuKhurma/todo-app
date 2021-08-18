@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import ToDo from './components/todo/ToDo';
+// import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import ToDo from './components/ToDo/ToDo';
 import ListContext from './context/settings/context';
 
 
@@ -12,7 +12,7 @@ function App() {
       <ListContext>
         <ToDo/>
       </ListContext>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }
