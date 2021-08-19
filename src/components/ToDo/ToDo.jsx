@@ -21,7 +21,7 @@ const ToDo = () => {
       difficulty: item.difficulty,
       complete: false,
     };
-    console.log(data);
+    // console.log(data);
     setList([...list, data]);
   }
 
