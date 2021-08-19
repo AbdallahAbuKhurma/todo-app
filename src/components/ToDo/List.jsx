@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Button } from '@blueprintjs/core';
+import {v4 as uuid} from 'uuid';
 import { ListContext } from '../../context/settings/context';
 
 function List(props) {
@@ -16,11 +17,11 @@ function List(props) {
 
   const PagesList = () => {
     const pages = [];
-    if(activePage > 1) pages.push(<Button className = 'usual bp3-intent-primary' onClick = {() => changePage(activePage -1)}>Previous</Button>);
+    if(activePage > 1) pages.push(<Button key = {uuid()} className = 'usual bp3-intent-primary' onClick = {() => changePage(activePage -1)}>Previous</Button>);
     for(let i = 1; i <= numOfPages; i++){
       pages.push(<Button className = 'usual' onClick = {() => changePage(i)} key = {i}>{i}</Button>);
     }
-    if(activePage < numOfPages) pages.push(<Button className = 'usual bp3-intent-primary' onClick = {() => changePage(activePage +1)}>Next</Button>);
+    if(activePage < numOfPages) pages.push(<Button key = {uuid()} className = 'usual bp3-intent-primary' onClick = {() => changePage(activePage +1)}>Next</Button>);
     return pages;
   };
 
