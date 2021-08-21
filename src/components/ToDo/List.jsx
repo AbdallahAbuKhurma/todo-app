@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Button } from '@blueprintjs/core';
 import {v4 as uuid} from 'uuid';
 import { ListContext } from '../../context/settings/context';
+import {If, Else} from 'react-if';
+import Auth from '../../context/auth/auth';
 
 function List(props) {
   const settings = useContext(ListContext);
@@ -64,9 +66,18 @@ function List(props) {
               <small>Difficulty: {item.difficulty}</small>
             </p>
             <p>
-              <Button className = 'bp3-intent-success' onClick={() => props.toggleComplete(item.id)}>
-                Complete: {item.complete.toString()}
-              </Button>
+              <If>
+                <Auth capability = 'update'>
+                  <Button className = 'bp3-intent-success' onClick={() => props.toggleComplete(item.id)}>
+                    Complete: {item.complete.toString()}
+                  </Button>
+                </Auth>
+                <Else>
+                  <Button disabled>
+                    Complete: {item.complete.toString()}
+                  </Button>
+                </Else>
+              </If>
             </p>
             <hr />
           </div>
