@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, FormGroup, InputGroup } from '@blueprintjs/core';
+import Auth from '../../context/auth/auth';
+
 function Form(props) {
   return (
     <div className = 'split left'>
@@ -19,7 +21,9 @@ function Form(props) {
       >
         <InputGroup className = 'input' onChange={props.handleChange} defaultValue={3} type="range" min={1} max={5} name="difficulty"/>
       </FormGroup>
-      <Button className = 'usual bp3-intent-primary' onClick = {props.handleSubmit}>Add to list</Button>
+      <Auth capability = 'delete'>
+        <Button className = 'usual bp3-intent-primary' onClick = {props.handleSubmit}>Add to list</Button>
+      </Auth>
     </div>
   );
 }
