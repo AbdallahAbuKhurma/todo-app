@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { If, Else, Then } from 'react-if';
-import { AuthContext } from './context';
+import { AuthContext } from '../../context/auth/context';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -43,6 +43,9 @@ function Login() {
             onChange={handlePassword}
           />
           <button className = 'login-button'>Login</button>
+          <h5 style = {{fontSize: '0.85rem'}}>DONT HAVE AN ACCOUNT?
+            <a style = {{marginLeft: '0.5rem', fontSize: '0.85rem'}} href="/signup">signup</a>
+          </h5>
         </form>
       </Else>
     </If>

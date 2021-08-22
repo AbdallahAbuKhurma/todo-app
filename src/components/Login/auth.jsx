@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { If } from 'react-if';
-import { AuthContext } from './context';
+import { AuthContext } from '../../context/auth/context';
 
 function Auth(props) {
   const AuthSettings = useContext(AuthContext);
