@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Button } from '@blueprintjs/core';
 import {v4 as uuid} from 'uuid';
 import { ListContext } from '../../context/settings/context';
-import Auth from '../../context/auth/auth';
 
 function List(props) {
   const settings = useContext(ListContext);
@@ -55,8 +54,12 @@ function List(props) {
         <Button className = 'incomplete bp3-intent-warning' onClick = {showIncomplete}>
           Hide Complete {filterCompleted === props.list? 'OFF' : 'ON'}
         </Button>
+        <br/>
+        <br/>
+        <br/>
         {activeList.map((item) => (
           <div className = 'list' key={item.id}>
+            <Button onClick = {() => props.deleteItem(item._id)} style = {{float: 'right', marginRight: '1.25rem'}} icon = 'delete'></Button>
             <p style = {{fontWeight: 'bold'}}>{item.text}</p>
             <p>
               <small>Assigned to: {item.assignee}</small>
@@ -65,11 +68,9 @@ function List(props) {
               <small>Difficulty: {item.difficulty}</small>
             </p>
             <p>
-              <Auth capability = 'update'>
-                <Button className = 'bp3-intent-success' onClick={() => props.toggleComplete(item.id)}>
+              <Button className = 'bp3-intent-success' onClick={() => props.toggleComplete(item._id)}>
                     Complete: {item.complete.toString()}
-                </Button>
-              </Auth>
+              </Button>
             </p>
             <hr />
           </div>
